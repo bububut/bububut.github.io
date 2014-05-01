@@ -15,9 +15,10 @@
   <meta name="description" content="Posts and writings by bububut">
 
 
+<meta name="keywords" content="">
 
   <title>
-Author: bububut  </title>
+测试代码  </title>
 
 </head>
 
@@ -36,25 +37,9 @@ Author: bububut  </title>
 
   <main>
     <header>
-<p>Author: bububut</p>
+<p>Posted on 2014-04-06 周日</p>
     </header>
 
-<article>
-  <div id="article_title">
-    <h3><a href="../2014/markdown-editor-review.html">一些好用的markdown编辑器</a></h3>
-  </div>
-  <div id="article_text">
-    <p>在V2ex上看到这个<a href="http://www.v2ex.com/t/106988">关于markdown编辑器的讨论</a>，总结其中答案，一致提到了几种较好的产品：</p>
-<ul>
-<li>DayOne</li>
-<li>StackExit</li>
-<li>Atom</li>
-<li>Ulysses III</li>
-<li>Haroopad</li>
-</ul>
-  </div>
-</article>
-<hr />
 <article>
   <div id="article_title">
     <h3><a href="../2014/try-code.html">测试代码</a></h3>
@@ -74,33 +59,36 @@ Author: bububut  </title>
         <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">context</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">theme ...</span></pre></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">theme</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_path</span> <span class="o">=</span> <span class="n">output_path</span>
+
+        <span class="k">for</span> <span class="n">arg</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the template by name.</span>
+<span class="sd">        Use self.theme to get the templates to use, and return a list of</span>
+<span class="sd">        templates ready to use with Jinja2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_templates</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_templates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">&#39;.html&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">TemplateNotFound</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&#39;[templates] unable to load </span><span class="si">%s</span><span class="s">.html from </span><span class="si">%s</span><span class="s">&#39;</span>
+                                <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_templates_path</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_templates</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</pre></div>
+
+
+<p>代码完毕</p>
   </div>
-</article>
-<hr />
-<article>
-  <div id="article_title">
-    <h3><a href="../2014/two-english-poems-by-luis-borges.html">献给贝阿特丽斯·比维洛尼·韦伯斯特·德布尔里奇</a></h3>
-  </div>
-  <div id="article_text">
-    <p>- Jorge Luis Borges (1934)<br>
-- 豪尔赫•路易斯•博尔赫斯 (1934)</p>
-<h3>I</h3>
-<p>The useless dawn finds me in a deserted streetcorner; I have outlived the night. </p>
-<p>无力的黎明穿过荒芜的街角<br>
-落在了我的身旁<br>
-我得以从深夜中逃亡</p>
-<p>Nights are proud waves; darkblue topheavy waves laden with all the hues of deep soil, laden with things unlikely and desirable. </p>
-<p>夜晚是骄傲的狂狼<br>
-她那深蓝色的浪尖上<br>
-承载着难以负荷的重量 ...</p>
+  <div id="article_meta">
+    <p>Category: <a href="../category/content.html">content</a></p>
   </div>
 </article>
 
     <footer>
-<p id="paginator">
-
-</p>
+<p><a href="../" class="button_accent">&larr; Back to Index</a></p>
     </footer>
 
     <div id="ending_message">
