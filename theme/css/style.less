@@ -15,8 +15,8 @@ body {
   padding: 0;
   background-color: @white;
   color: @dark-grey;
-  font-family: @sans;
-  font-size: 1.125em;
+  font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif,'微软雅黑', '宋体';
+  font-size: 15px;
 }
 
 a {
@@ -93,30 +93,19 @@ main {
     }
 
     div#article_text {
-      line-height: 1.375em;
+      line-height: 160%;
+
       a {
+        color: @blue;
+      }
+      a :hover {
         text-decoration: underline;
       }
+      
 
       code {
-        margin: 2px;
-        padding: 0;
-        color: @black;
-        font-size: 0.75em;
-        font-family: @mono;
+        line-height: 120%;
         background: @light-grey;
-      }
-
-      pre {
-        margin: 22px 2px 22px 2px;
-        padding: 2px;
-        color: @black;
-        border-left: 3px solid @accent;
-        font-size: 0.75em;
-        font-family: @mono;
-        background: @light-grey;
-        line-height: 1.125em;
-        overflow-x: auto;
       }
 
       blockquote {
@@ -124,6 +113,15 @@ main {
         padding-left: 40px;
         color: @med-grey;
         font-style: italic;
+      }
+
+      table {
+        th, td {
+          padding: 8px;
+          linehight: 20px;
+          vertical-align: top;
+          border-top: @light-grey 1px solid;
+        }
       }
     }
 
